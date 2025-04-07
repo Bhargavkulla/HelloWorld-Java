@@ -13,7 +13,7 @@ spec:
         app: helloworld
     spec:
       containers:
-        - name: helloworld
-          image: bhargavakulla/helloworld-java:latest
-          ports:
-            - containerPort: 8080
+      - name: helloworld
+        image: bhargavakulla/javaapplication
+        ports:
+        - containerPort: 8080

@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/Bhargavkulla/java-helloworld.git'
+                git branch: 'main', url: 'https://github.com/Bhargavkulla/HelloWorld-Java.git'
             }
         }
         stage('Build Docker Image') {

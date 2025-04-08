@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/Bhargavkulla/HelloWorld-Java.git'
+                git branch: 'main', url: 'https://github.com/Bhargavkulla/java-helloworld.git'
             }
         }
         stage('Build Docker Image') {
@@ -26,10 +26,9 @@ pipeline {
         }
         stage('Deploy to Kubernetes') {
             steps {
-                withEnv(["KUBECONFIG=/var/lib/jenkins/.kube/config"]) {
                 sh 'kubectl apply -f deployment.yaml'
-                sh 'kubectl applyf -f service.yaml'
+                sh 'kubectl apply -f service.yaml'
+            }
         }
-    }
     }
 }
